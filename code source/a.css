@@ -1,0 +1,344 @@
+body {
+  background: #efefef;
+  color: black;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  color: inherit; /*继承祖先的颜色 inherit */
+  text-decoration: none;
+}
+hr {
+  height: 0;
+  border: none;
+  border-top: 1px solid #dedede;
+}
+ol,
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+.username {
+  text-align: left;
+  color: black;
+  font-family: 楷体;
+}
+.clearFix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.topNavbar {
+  /* 
+    如果只是使用padding的话 name依照上右下左的设置方式设值!
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 16px;
+    padding-right: 16px; 
+    padding:20px 16px 20px 16px;
+     */
+  padding: 20px 0 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.topNavBar-inner {
+  padding: 0 16px;
+}
+.topNavbar nav {
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+.topNavbar nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.topNavbar nav > ul > li {
+  float: left;
+  margin-left: 17px;
+  margin-right: 17px;
+}
+.topNavbar nav > ul > li > a {
+  font-size: 12px;
+  color: #b7b7b7;
+  font-weight: bold;
+  text-decoration: none;
+  border-top: 4px solid transparent;
+  border-bottom: 3px solid transparent;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: block;
+}
+.topNavbar nav > ul > li > a:hover {
+  border-bottom: 3px solid #e06567;
+}
+.topNavbar .logo {
+  font-size: 24px;
+  font-family: "Arial Black";
+  padding-top: 3px;
+  padding-bottom: 4px;
+}
+.topNavbar .logo .rs {
+  margin-right: 1px;
+  color: #e6686a;
+}
+.topNavbar .logo .card {
+  color: #9a9da2;
+}
+.banner {
+  height: 515px;
+  background-image: url(./image/resume_01.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.banner .mask {
+  height: 515px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.userCard {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+.text .welcome {
+  background-color: #e8676b;
+  color: white;
+  display: inline-block;
+  /* width: 70px;
+    height:29px;
+    line-height:29px;
+    text-align: center; 
+    */
+  padding: 4px 15px;
+  line-height: 22px;
+  position: relative;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.userCard .welcome .triangle {
+  display: block;
+  border: 10px solid transparent;
+  width: 0px;
+  border-left-color: #e6686a;
+  border-top-width: 0px;
+  position: absolute;
+  left: 4px;
+  top: 100%;
+}
+.userCard .picture {
+  float: left;
+}
+.userCard .text {
+  float: left;
+  margin-left: 65px;
+  width: 470px;
+}
+.userCard .text h1 {
+  margin-top: 18px;
+}
+.userCard .text hr {
+  margin: 20px 0;
+}
+.userCard .textAndpicture {
+  padding: 50px;
+}
+
+.userCard dl dt,
+.userCard dl dd {
+  float: left;
+  padding: 8px 0;
+}
+
+.userCard dl dt {
+  width: 30%;
+  font-weight: bold;
+}
+.userCard dl dd {
+  width: 70%;
+  color: #9da0a7;
+}
+.userCard > footer.media {
+  background: #e6686a;
+  text-align: center;
+}
+.userCard svg {
+  width: 30px;
+  height: 30px;
+  vertical-align: top;
+}
+.userCard > footer.media > a {
+  display: inline-block;
+  width: 40px;
+  line-height: 30px;
+  padding: 5px 0;
+  border-radius: 50%;
+  margin: 16px;
+}
+.userCard > footer.media > a:hover {
+  background: #cf5d50;
+}
+body > main {
+  margin-top: -367px;
+}
+body > main .DownloadResume {
+  border: 1px solid #cdcfd1;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 21px 55px;
+  display: inline-block;
+  background: #efefef;
+  border-radius: 2px;
+  color: #3d4451;
+  font-weight: bold;
+  margin: 32px 0;
+  transition: box-shadow 0.3s;
+  /* 为盒子阴影添加过渡! 过渡时间为1秒 就不会显得那么突兀!*/
+}
+
+body > main .DownloadResume-wrapper {
+  text-align: center;
+}
+body > main .DownloadResume:hover {
+  box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
+}
+/* 对自我介绍进行字体设置 */
+.selfIntroduction {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-weight: bold;
+  font-family: kaiti;
+  line-height: 1.8;
+  font-size: 18px;
+}
+section.skills,
+section.portfolio {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+section.portfolio > h2,
+section.skills > h2 {
+  text-align: center;
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+section.skills h3 {
+  font-size: 14px;
+  line-height: 1.1;
+  padding-right: 40px;
+}
+
+section.skills > ol {
+  background: white;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  padding: 42px 50px 10px;
+  margin-top: 30px;
+}
+section.skills > ol > li {
+  float: left;
+  width: 48%;
+  box-sizing: border-box;
+}
+section.skills > ol > li:nth-child(even) {
+  float: right;
+}
+
+section.skills .progressBar {
+  height: 3px;
+  background: #fae1e1;
+  border-radius: 2px;
+  margin: 4px 0 40px;
+}
+
+section.skills .progressBar > .progress {
+  height: 100%;
+  background: #e6686a;
+  width: 70%;
+  border-radius: 2px;
+}
+
+section.portfolio {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+section.portfolio > nav {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+section.portfolio > nav > ol {
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: top;
+}
+
+section.portfolio > nav > ol > li {
+  float: left;
+  margin-left: 40px;
+  cursor: pointer;
+}
+section.portfolio > nav > ol > li:first-child {
+  margin-left: 0px;
+}
+
+section.portfolio > nav .bar {
+  height: 5px;
+  background: white;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+section.portfolio > nav .barInner {
+  height: 100%;
+  background: #e6686a;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+section.portfolio > nav .bar.state1 .barInner {
+  margin-left: 0px;
+  width: 31px;
+}
+
+section.portfolio > nav .bar.state2 .barInner {
+  margin-left: 73px;
+  width: 31px;
+}
+
+section.portfolio > nav .bar.state3 .barInner {
+  margin-left: 145px;
+  width: 90px;
+}
+/* 设置相对定位 */
+section.portfolio .works {
+  position: relative;
+}
+
+/* 设置绝对定位 */
+section.portfolio .works > .big,
+section.portfolio .works > .small {
+  position: absolute;
+}

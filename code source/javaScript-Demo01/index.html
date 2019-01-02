@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <!-- <script src="./main.js"></script>     -->
+    <title>JavaScript-Demo form ProbeDream</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div class="warpper" id="main">
+
+        </div>
+    </main>
+    <footer></footer>
+    <script>
+        //1.数据的初始化操作!
+        //通过数组来装数组(按照界面布局 是由三行组成的键盘布局) 所以键盘里面封装了26个字母!
+        function dataInit() {
+            var keys = {
+                '0': { 0: 'q', 1: 'w', 2: 'e', 3: 'r', 4: 't', 5: 'y', 6: 'u', 7: 'i', 8: 'o', 9: 'p', length: 10 },
+                '1': { 0: 'a', 1: 's', 2: 'd', 3: 'f', 4: 'g', 5: 'h', 6: 'j', 7: 'k', 8: 'l', length: 9 },
+                '2': { 0: 'z', 1: 'x', 2: 'c', 3: 'v', 4: 'b', 5: 'n', 6: 'm', length: 7 },
+                'length': 3
+            }
+            var hash = {
+                'q': 'qq.com',
+                'w': 'weibo.com',
+                'e': 'ele.me',
+                'r': 'renren.com',
+                't': 'taobao.com',
+                'y': 'youtube.com',
+                'u': 'uc.com',
+                'i': 'iqiyi.com',
+                'o': 'opera.com',
+                'p': 'pptv.com',
+                'a': 'alibaba.com',
+                's': 'souhu.com',
+                'd': 'dangdang.com',
+                'f': 'facebook.com',
+                'g': 'google.com.hk',
+                'h': 'hulu.com',
+                'j': 'jupyter.org',
+                'k': 'kugou.com',
+                'l': 'lenovo.com',
+                'z': 'zhihu.com',
+                'x': 'xmind.net',
+                'c': 'coursera.org',
+                'v': 'v2ex.com',
+                'b': 'baidu.com',
+                'n': 'nginx.com',
+                'm': 'mindjet.com'
+            }
+
+            //取出LocalStorage里面的对应的项 根据对应之前设置的key来取值  因为拿到的是String的值 但是之前的值是hash 所以需要调用parse进行解析!
+            var hashInLocalStorage = getFromLocalStorage('saveState')
+            //先判断浏览器中的localStroage是否有值   如果有的话 则直接覆盖掉hash 但是刚开始的时候hash是没有进行改动的!
+            if (hashInLocalStorage) {
+                hash = hashInLocalStorage//如果if里面为true的话 那么就是存在的就是用来对hash进行覆盖操作!
+            }
+            return {
+                "keys": keys,
+                "hash": hash
+            }
+        }
+        function getFromLocalStorage(parameters) {
+            return JSON.parse(localStorage.getItem(parameters) || 'null')
+        }
+
+
+        function CreateElement(targetName) {
+            return document.createElement(targetName)
+        }
+
+        function createSpan(textContent) {
+            var span = CreateElement('span')
+            span.textContent = textContent
+            span.className = 'text'
+            return span
+        }
+
+        function createButton(id) {
+            var button = CreateElement('button')
+            button.textContent = '编辑'
+            button.id = id //button1 里面的值 其实就是对应的row中的每一个div 通过row[index2]来进行获取!
+            button.onclick = function (ListenerBt) {
+                var button2 = ListenerBt['target']
+                var img2 = button2.previousSibling //通过button2.previousSibling 拿到他的哥哥!
+                var key = button2['id']//拿到点击编辑按钮的标签的 id值
+                var url = prompt("请给我一个网址:")
+                hash[key] = url//将自己输入的值 对hash进行替换! 记住替换的值就是hash[key]对应的网址!
+                img2.src = 'http://' + url + "/favicon.ico"//并且将当前网址获取的图片 对之前的图片进行替换操作!
+                img2.onerror = function (event) {
+                    event.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
+                }
+                localStorage.setItem("saveState", JSON.stringify(hash))// setItem(String key,String value) 设置项 使用JSON.stringify()转成String! 
+            }
+            return button
+        }
+
+        function createImage(url) {
+            var image = CreateElement('img')
+            if (url) {
+                image.src = 'http://' + url + "/favicon.ico"
+            } else {
+                image.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
+            }
+            image.onerror = function (event) {
+                event.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
+            }
+            return image
+        }
+
+        function generateKeyboard(keys, hash) {
+            //2.生成键盘
+            for (var index = 0; index < keys['length']; index++) {
+                var div1 = CreateElement('div')
+                div1.className = 'row'
+
+                main.appendChild(div1)
+                var row = keys[index] //第一个数组 第二个数组 第三个数组   row代表一行!
+                for (var index2 = 0; index2 < row['length']; index2++) {
+                    var span = createSpan(row[index2])
+
+                    var button1 = createButton(row[index2])
+
+                    var image = createImage(hash[row[index2]])
+
+                    var kbd = CreateElement('kbd')
+                    kbd.className = 'keyboard'
+                    kbd.appendChild(span)
+
+                    kbd.appendChild(image)
+                    kbd.appendChild(button1)
+                    div1.appendChild(kbd)//div里面放入k`bd(ketboard)
+                }
+
+            }
+        }
+
+        function listenToKeyBoard(hash) {
+            //3.监听键盘!
+            document.onkeypress = function (ListenerKbd) {
+                var key = ListenerKbd['key']//获取键盘上所按下的键位
+                var website = hash[key] //通过对应的键位拿到对应的网站(Website)
+                //location.href='http://'+website  注释部分是直接从该页面打开对应的键位对应的网站
+                window.open("http://" + website, '_blank')
+            }
+        }
+        //数据的初始化操作
+        var hashA = dataInit()
+        //拿到具体的keys 键盘的字符值数组
+        var keys = hashA["keys"]
+        //字符值对应的网站数组
+        var hash = hashA["hash"]
+        //生成键盘
+        generateKeyboard(keys, hash)
+        //监听用户操作
+        listenToKeyBoard(hash)
+    </script>
+</body>
+
+</html>

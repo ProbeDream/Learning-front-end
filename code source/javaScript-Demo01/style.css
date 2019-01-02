@@ -1,0 +1,76 @@
+*{margin: 0;padding: 0;}
+a{text-decoration: none;}
+kbd{
+    border:1px solid red;
+    width:4em;
+    height: 4em;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+}
+kbd > button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+kbd:hover > button{
+    display:inline-block;
+}
+body{
+    background:grey url(./image/compress.jpg) no-repeat center center;
+    background-size:cover;
+}
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+#main > div:nth-child(2){
+    margin-left: -22px;
+} 
+#main > div:nth-child(3){
+    margin-left: -80px;
+} 
+#main{
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border-radius: 40px;
+}
+.keyboard {
+    width: 50px;
+    height: 40px;
+    background: linear-gradient(to bottom, #292929 0%, #111111 100%);
+    border: 1px solid #373737;
+    border-radius: 6px;
+    color: #c5c5c5;
+    box-shadow: 0 0 0 1px #1a1b1c,0 0 0 2px #1f2020, 0 -1px 0 1px #080808;
+    font-size: 16px;
+    font-family: helvetica;
+    position: relative;
+    /*
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; 
+    */
+}
+.row{
+    margin: 20px;
+}
+.row .keyboard{
+    margin: 0 10px;
+}
+.keyboard img{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left:4px;
+    bottom:2px;
+}
+.keyborad .text{
+    position: absolute;
+    left: 4px;
+    top: 2px;
+}

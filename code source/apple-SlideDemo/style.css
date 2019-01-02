@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+.window {
+  width: 941px;
+  height: 583px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+.images {
+  display: flex;
+  transition: all 1s;
+}
+.images > img {
+  width: 100%;
+  transition: all 0.3s;
+}
+#controls > button{
+  padding: 0px 10px;
+  margin: 7px 10px;
+}
+
+#buttonWrapper > button {
+  padding: 0px 10px;
+  margin: 7px 10px;
+}

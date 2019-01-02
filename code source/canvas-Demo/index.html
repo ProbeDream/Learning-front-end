@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>My paint</title>
+
+    <script src="//at.alicdn.com/t/font_913491_w578eryzyh.js"></script>
+</head>
+
+<body>
+    <canvas id="canvasDemo" width="300" height="300">
+
+    </canvas>
+    <div id="actions" class="actions">
+        <svg id="pen" class="icon active">
+            <use xlink:href="#icon-pen"></use>
+        </svg>
+
+        <svg id="eraser" class="icon">
+            <use xlink:href="#icon-eraser"></use>
+        </svg>
+        <svg id="clear" class="icon">
+            <use xlink:href="#icon-clearthecache"></use>
+        </svg>
+        <svg id="download" class="icon">
+            <use xlink:href="#icon-Save"></use>
+        </svg>
+        <ol class="colors">
+            <li id="black" class="black active"></li>
+            <li id="red" class="red"></li>
+            <li id="green" class="green"></li>
+            <li id="blue" class="blue"></li>
+        </ol>
+        <ol class="sizes">
+            <li class="thin" id="thin"></li>
+            <li class="thick" id="thick"></li>
+        </ol>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
