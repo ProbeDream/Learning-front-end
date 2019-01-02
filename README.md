@@ -1,7 +1,7 @@
 
 这是我学习前端过程中的一些小Demo!
 
-> * This link is [demo.sh](https://github.com/CharlieSmith97/Blog/blob/master/code%20source/demo.sh) 
+> * This link is [demo.sh](https://github.com/CharlieSmith97/Learning-front-end/blob/master/code%20source/demo.sh) 
 
 > * append node code [node code  source](https://github.com/CharlieSmith97/Learning-front-end/blob/master/code%20source/server.js)
 
