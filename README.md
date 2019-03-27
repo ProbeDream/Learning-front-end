@@ -9,5 +9,5 @@ My simple [resume link](https://charliesmith97.github.io/Learning-front-end/myCo
 > * [This is Midterm](https://charliesmith97.github.io/Learning-front-end/code%20source/middle%20example/第一题/index.html)
 > * [Simple Animation-Resume ](https://charliesmith97.github.io/Learning-front-end/Animation-Resume/index.html)
 > * [This is taiji](https://charliesmith97.github.io/Learning-front-end/code%20source/taiji/taiji.html)
-> * [This is My onLine Resume link](https://charliesmith97.github.io/Learning-front-end/onLine-Resume/index.html)\
+> * [This is My onLine Resume link](https://charliesmith97.github.io/Learning-front-end/onLine-Resume/index.html)
 > * [Canvas Exquisite small drawing board](https://charliesmith97.github.io/Learning-front-end/code%20source/canvas-Demo/index.html)
